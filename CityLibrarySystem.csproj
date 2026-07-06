@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="ConsoleTheme">
       <HintPath>C:\Users\ascom\source\repos\ConsoleTheme\ConsoleTheme\bin\Debug\net8.0\ConsoleTheme.dll</HintPath>
     </Reference>

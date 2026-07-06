@@ -17,7 +17,7 @@ namespace CityLibrarySystem.Models
         public Librarian Manager { get; set; }
 
 
-        private readonly List<BookCopy > copies = new();
+        private readonly List<BookCopy> copies = new();
         private readonly List<Member> members = new();
 
         public IReadOnlyList<Member> Members => members;
@@ -63,20 +63,22 @@ namespace CityLibrarySystem.Models
 
         public Member FindMember(string id)
         {
-            foreach (Member mem in members)
+            string normalized = id.Normalize();
+            for (int i = 0; i < members.Count; i++)
             {
-                if(mem.MembershipId == id.Normalize())
-                    return mem;
+                if (members[i].MembershipId == normalized)
+                    return members[i];
             }
             throw new InvalidOperationException("Member Not Found !!!");
         }
 
         public BookCopy FindCopy(string id)
         {
-            foreach (BookCopy copy in BookCopies)
+            string normalized = id.Normalize();
+            for (int i = 0; i < copies.Count; i++)
             {
-                if (copy.CopyId == id.Normalize())
-                    return copy;
+                if (copies[i].CopyId == normalized)
+                    return copies[i];
             }
             throw new InvalidOperationException("Book Copy Not Found !!!");
         }
