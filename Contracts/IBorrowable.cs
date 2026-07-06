@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CityLibrarySystem.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace CityLibrarySystem.Contracts
 {
     public interface IBorrowable
     {
-        void Borrow();
+        void Borrow(Member member , int loanDays = 14);
         decimal Return();
-        bool IsAvaiable();
+        bool IsAvailable();
     }
 }
